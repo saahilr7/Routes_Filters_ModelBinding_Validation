@@ -1,0 +1,47 @@
+﻿@model Person
+
+@{
+    Layout = null;
+}
+
+    <form asp-action="CourseInfo" method="post">
+        <div class="form-group">
+            <label asp-for="PersonId"></label>
+            <input asp-for="PersonId" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Role"></label>
+            <select asp-for="Role" class="form-control"
+                    asp-items="@new SelectList(Enum.GetNames(typeof(Role)))"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="HomeAddress.City"></label>
+            <input asp-for="HomeAddress.City" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="HomeAddress.Country"></label>
+            <input asp-for="HomeAddress.Country" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Course.ISM"></label>
+            <input asp-for="Course.ISM" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Course.CRN"></label>
+            <input asp-for="Course.CRN" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Course.Credits"></label>
+            <input asp-for="Course.Credits" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
